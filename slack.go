@@ -45,8 +45,8 @@ func RtmHandshake(token string) *websocket.Conn {
 
 	ws, err := websocket.Dial(response.Url, "", "https://api.slack.com/")
 	if err != nil {
+		log.Println(err)
 		log.Fatalf("Failed to obtain websocket connection for URL %s\n", response.Url)
-		log.Fatal(err)
 	}
 
 	return ws
